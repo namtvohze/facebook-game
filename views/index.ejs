@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+
+    <link rel="stylesheet" href="/assets/owl.carousel.min.css"/>
+    <link rel='stylesheet' href='/css/style.css'/>
+    <script type="text/javascript" src="/js/swfobject.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script type="text/javascript">
+        swfobject.registerObject("myId", "9.0.0", "expressInstall.swf");
+    </script>
+
+</head>
+<body>
+<div class="main-content">
+    <div class="main-header">
+        <div class="header-left">
+            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"
+                 data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
+            <!-- Đặt thẻ này vào nơi bạn muốn Nút +1 kết xuất. -->
+            <div class="g-share">
+                <div class="g-plusone"></div>
+            </div>
+        </div>
+        <div class="header-right">
+            <ul>
+                <li><a href="https://chanphom.com" class="forum"></a></li>
+                <li><a href="https://apps.facebook.com/chanphom/?fb_source=search&ref=br_rs" class="fanpage"></a></li>
+                <li><a href="https://chanphom.com" class="support"></a></li>
+                <li><a href="/" class="reload"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-body">
+        <div class="game-content" id="game-conetent">
+            <!--<object>-->
+            <param name="movie" value="https://cdnvi.com/11/tpr/truongnx159/Ldr.swf" width="960" height="630"/>
+            <!--[if !IE]>-->
+            <object style="background-color: black" type="application/x-shockwave-flash"
+                    data="https://dev.sandinh.com/tpr/lam/Ldr.swf" width="960" height="630">
+                <!--<![endif]-->
+                <!--<div>-->
+                <!--<h1>Alternative content</h1>-->
+                <!--<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>-->
+                <!--</div>-->
+                <!--[if !IE]>-->
+            </object>
+            <!--<![endif]-->
+            <!--</object>-->
+
+        </div>
+        <div class="social-content">
+
+        </div>
+    </div>
+    <div class="main-footer">
+        <div class="friend-invite">
+            <button class="prevouis change"></button>
+            <div class="list-friend-wrapper">
+                <div class="owl-carousel owl-theme">
+                    <% for(var i = 0;i < 10;i++){ %>
+                    <div class="item friend">
+                        <img class="avatar" src="/img/ava.png">
+                        <a class="name">Giang Nguyễn</a>
+                        <button class="btnInvite"></button>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+            <div class="item friend facebook-invite">
+                <img class="avatar" src="/img/icon_moi.png">
+                <button class="btnInvite"></button>
+            </div>
+            <button class="next change"></button>
+        </div>
+        <div style="background-color: #222222" class="fb-comments" data-colorscheme="dark"
+             data-href="https://chanphom.com"
+             data-width="960" data-numposts="50"></div>
+    </div>
+</div>
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9&appId=1615151565418065";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<!-- Đặt thẻ này vào phần đầu hoặc ngay trước thẻ đóng phần nội dung của bạn. -->
+<script src="https://apis.google.com/js/platform.js" async defer>
+    {
+        lang: 'vi'
+    }
+</script>
+<script>
+    $(document).ready(function () {
+        var owl = $('.owl-carousel').owlCarousel({
+            items: 7,
+            rewindNav: false,
+            margin: 10,
+        });
+        $('.change.prevouis').click(function () {
+            owl.trigger('prev.owl.carousel');
+        })
+        $('.change.next').click(function () {
+            owl.trigger('next.owl.carousel');
+        })
+    });
+</script>
+</body>
+</html>
