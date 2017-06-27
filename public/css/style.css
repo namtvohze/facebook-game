@@ -4,6 +4,7 @@ body{
     background: black;
     background-image: url("/img/nen.png");
     font-family: Arial;
+    background-repeat: no-repeat;
 }
 ul,li{
     margin: 0px;
