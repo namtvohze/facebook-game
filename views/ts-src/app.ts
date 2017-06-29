@@ -39,7 +39,6 @@ export class SinglePage {
         this.facebookAPI.init();
         $(document).ready(function () {
             $('.facebook-invite .btnInvite').click(() => {
-                alert('123');
                 facebookAPI.appRequests();
             });
             $('.item.friend .btnInvite').click(() => {

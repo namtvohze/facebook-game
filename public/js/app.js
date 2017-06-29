@@ -111,7 +111,6 @@ var SinglePage = (function () {
         $(document).ready(function () {
             var _this = this;
             $('.facebook-invite .btnInvite').click(function () {
-                alert('123');
                 facebookAPI.appRequests();
             });
             $('.item.friend .btnInvite').click(function () {
@@ -543,6 +542,7 @@ var FacebookAPI = (function (_super) {
     };
     FacebookAPI.prototype.appRequests = function (callback) {
         if (callback === void 0) { callback = null; }
+        alert('123');
         FB.ui({ method: 'apprequests',
             message: 'Vào chơi cùng mình nhé! Game rất hay'
         }, function (response) {
