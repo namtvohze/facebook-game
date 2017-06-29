@@ -19,6 +19,7 @@ export class SinglePage{
                 if (response.data) {
                     var eOwlCarouselFriends:any = $('.list-friend-wrapper .owl-carousel');
                     var eSampleFriend = eOwlCarouselFriends.find('sample').first();
+                    console.log(eSampleFriend);
                     response.data.forEach((friend) => {
                         console.log(friend);
                         var e = eSampleFriend.clone().removeClass('sample');

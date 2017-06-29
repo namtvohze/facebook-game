@@ -96,6 +96,7 @@ var SinglePage = (function () {
                 if (response.data) {
                     var eOwlCarouselFriends = $('.list-friend-wrapper .owl-carousel');
                     var eSampleFriend = eOwlCarouselFriends.find('sample').first();
+                    console.log(eSampleFriend);
                     response.data.forEach(function (friend) {
                         console.log(friend);
                         var e = eSampleFriend.clone().removeClass('sample');
