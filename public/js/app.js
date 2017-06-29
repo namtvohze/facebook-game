@@ -188,6 +188,7 @@ var SinglePage = (function (_super) {
             facebookAPI = _this.facebookAPI;
         });
         this.facebookAPI.on('readyShowFriend', function () {
+            console.log('111111111111111111111111111111');
             facebookAPI.fbInvite(function (response) {
                 console.log('----------------------------', response);
                 if (response.data) {

@@ -14,6 +14,7 @@ export class SinglePage extends Event {
             facebookAPI = this.facebookAPI;
         });
         this.facebookAPI.on('readyShowFriend',()=>{
+            console.log('111111111111111111111111111111');
             facebookAPI.fbInvite(function (response) {
                 console.log('----------------------------',response);
                 if (response.data) {
