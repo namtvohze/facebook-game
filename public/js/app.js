@@ -95,7 +95,7 @@ var SinglePage = (function () {
                     response.data.forEach(function (friend) {
                         var e = eSampleFriend.clone().removeClass('sample');
                         e.find('.avatar').attr('src', friend.picture.data.url);
-                        e.find('.name').text(friend.name);
+                        e.find('.name').text(friend.name).attr('title', friend.name);
                         e.find('.btnInvite').attr('friendId', friend.id);
                         eOwlCarouselFriends.append(e);
                     });
@@ -109,8 +109,12 @@ var SinglePage = (function () {
         });
         this.facebookAPI.init();
         $(document).ready(function () {
+            var _this = this;
             $('.facebook-invite .btnInvite').click(function () {
-                facebookAPI.fbInvite();
+                facebookAPI.appRequests();
+            });
+            $('.item.friend .btnInvite').click(function () {
+                facebookAPI.appRequestToUser($(_this).attr('friendId'));
             });
         });
     };
@@ -531,6 +535,27 @@ var FacebookAPI = (function (_super) {
         if (callback === void 0) { callback = null; }
         FB.api("/me/invitable_friends", function (response) {
             console.log(response);
+            if (callback) {
+                callback(response);
+            }
+        });
+    };
+    FacebookAPI.prototype.appRequests = function (callback) {
+        if (callback === void 0) { callback = null; }
+        FB.ui({ method: 'apprequests',
+            message: 'Vào chơi cùng mình nhé! Game rất hay'
+        }, function (response) {
+            if (callback) {
+                callback(response);
+            }
+        });
+    };
+    FacebookAPI.prototype.appRequestToUser = function (userId, callback) {
+        if (callback === void 0) { callback = null; }
+        FB.ui({ method: 'apprequests',
+            message: 'Vào chơi cùng mình nhé! Game rất hay',
+            to: userId
+        }, function (response) {
             if (callback) {
                 callback(response);
             }

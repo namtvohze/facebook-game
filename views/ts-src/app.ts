@@ -8,7 +8,7 @@ export class SinglePage {
     facebookAPI = new FacebookAPI();
 
     public run() {
-        var facebookAPI;
+        var facebookAPI:FacebookAPI;
         this.facebookAPI.on('readyFacebook', () => {
             console.log('22222222222222222222222222222-123');
             facebookAPI = this.facebookAPI;
@@ -24,7 +24,7 @@ export class SinglePage {
                     response.data.forEach((friend) => {
                         var e = eSampleFriend.clone().removeClass('sample');
                         e.find('.avatar').attr('src', friend.picture.data.url);
-                        e.find('.name').text(friend.name);
+                        e.find('.name').text(friend.name).attr('title',friend.name);
                         e.find('.btnInvite').attr('friendId', friend.id);
                         eOwlCarouselFriends.append(e);
                     });
@@ -35,11 +35,14 @@ export class SinglePage {
                     });
                 }
             });
-        })
+        });
         this.facebookAPI.init();
         $(document).ready(function () {
             $('.facebook-invite .btnInvite').click(() => {
-                facebookAPI.fbInvite();
+                facebookAPI.appRequests();
+            });
+            $('.item.friend .btnInvite').click(() => {
+                facebookAPI.appRequestToUser($(this).attr('friendId'));
             });
         });
     }

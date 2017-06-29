@@ -95,6 +95,27 @@ var FacebookAPI = (function (_super) {
             }
         });
     };
+    FacebookAPI.prototype.appRequests = function (callback) {
+        if (callback === void 0) { callback = null; }
+        FB.ui({ method: 'apprequests',
+            message: 'Vào chơi cùng mình nhé! Game rất hay'
+        }, function (response) {
+            if (callback) {
+                callback(response);
+            }
+        });
+    };
+    FacebookAPI.prototype.appRequestToUser = function (userId, callback) {
+        if (callback === void 0) { callback = null; }
+        FB.ui({ method: 'apprequests',
+            message: 'Vào chơi cùng mình nhé! Game rất hay',
+            to: userId
+        }, function (response) {
+            if (callback) {
+                callback(response);
+            }
+        });
+    };
     return FacebookAPI;
 }(events.EventEmitter));
 exports.FacebookAPI = FacebookAPI;

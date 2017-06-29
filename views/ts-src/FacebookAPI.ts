@@ -105,4 +105,23 @@ export class FacebookAPI extends  events.EventEmitter  {
             }
         );
     }
+    public appRequests(callback=null){
+        FB.ui({method: 'apprequests',
+            message: 'Vào chơi cùng mình nhé! Game rất hay'
+        }, function(response){
+            if(callback){
+                callback(response);
+            }
+        });
+    }
+    public appRequestToUser(userId,callback=null){
+        FB.ui({method: 'apprequests',
+            message: 'Vào chơi cùng mình nhé! Game rất hay',
+            to: userId
+        }, function(response){
+            if(callback){
+                callback(response);
+            }
+        });
+    }
 }
