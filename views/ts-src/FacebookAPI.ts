@@ -1,11 +1,10 @@
 /**
  * Created by NamTV on 6/8/2017.
  */
-import {Event} from "typescript.events"
+import events = require('events');
 declare var FB: any;
-export class FacebookAPI extends Event {
+export class FacebookAPI extends  events.EventEmitter  {
     isReady;
-
     private loadFacebookSDK() {
         console.log('333333333333333333333');
         FB.init({
@@ -24,6 +23,7 @@ export class FacebookAPI extends Event {
 
     init() {
         this.loadFacebookSDK();
+
     }
 
     public getLoginStatus() {
@@ -33,7 +33,7 @@ export class FacebookAPI extends Event {
             // this.fbListFriends();
             // // this.fbFeed();
             // this.fbInvite();
-            console.log('--------------------------------',response);
+            console.log('--------------------------------', response);
             this.emit('readyShowFriend');
         });
     }
@@ -50,21 +50,23 @@ export class FacebookAPI extends Event {
             }
         );
     }
-    public fbListFriends(){
+
+    public fbListFriends() {
         FB.api(
             '/me',
             'GET',
-            {"fields":"id,name,friends,picture"},
-            function(response) {
+            {"fields": "id,name,friends,picture"},
+            function (response) {
                 console.log(response);
             }
         );
     }
-    public fbShare(){
+
+    public fbShare() {
         FB.ui({
             method: 'share',
             href: 'https://developers.facebook.com/docs/',
-        }, function(response){
+        }, function (response) {
             console.log(response);
         });
         // FB.ui({
@@ -79,23 +81,25 @@ export class FacebookAPI extends Event {
 
 
     }
-    public fbFeed(){
+
+    public fbFeed() {
         FB.ui({
             method: 'feed',
             link: 'https://developers.facebook.com/docs/',
             caption: 'Your Caption here',
             description: 'some sort of your own description',
             message: 'Your Message goes here mate'
-        }, function(response){
+        }, function (response) {
             console.log(response);
         });
     }
-    public fbInvite(callback=null){
+
+    public fbInvite(callback = null) {
         FB.api(
             "/me/invitable_friends",
             function (response) {
                 console.log(response);
-                if(callback){
+                if (callback) {
                     callback(response);
                 }
             }

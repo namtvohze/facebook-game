@@ -7,7 +7,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 /**
  * Created by NamTV on 6/8/2017.
  */
-var typescript_events_1 = require("typescript.events");
+var events = require('events');
 var FacebookAPI = (function (_super) {
     __extends(FacebookAPI, _super);
     function FacebookAPI() {
@@ -96,6 +96,6 @@ var FacebookAPI = (function (_super) {
         });
     };
     return FacebookAPI;
-}(typescript_events_1.Event));
+}(events.EventEmitter));
 exports.FacebookAPI = FacebookAPI;
 //# sourceMappingURL=FacebookAPI.js.map

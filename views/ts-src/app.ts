@@ -2,18 +2,16 @@
  * Created by NamTV on 6/6/2017.
  */
 import * as $ from 'jquery';
-import {Event} from "typescript.events"
 import {FacebookAPI} from "./FacebookAPI";
-declare var parser: any;
-export class SinglePage extends Event {
+export class SinglePage{
     facebookAPI = new FacebookAPI();
-
     public run() {
         var facebookAPI;
         this.facebookAPI.on('readyFacebook', () => {
-            console.log('22222222222222222222222222222');
+            console.log('22222222222222222222222222222-123');
             facebookAPI = this.facebookAPI;
         });
+
         this.facebookAPI.on('readyShowFriend',()=>{
             console.log('111111111111111111111111111111');
             facebookAPI.fbInvite(function (response) {
