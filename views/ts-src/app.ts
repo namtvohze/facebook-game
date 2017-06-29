@@ -30,7 +30,7 @@ export class SinglePage {
                         rewindNav: false,
                         margin: 10,
                     });
-                    $('.friend-invite').show();
+                    $('.list-friend-wrapper').show();
                 }
             });
         });

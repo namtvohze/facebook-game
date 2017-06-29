@@ -114,6 +114,7 @@ a.tienlen{
     background-image: url("/img/khungbanbe.png");
     margin-top: 3px;
     margin-bottom: 3px;
+    display: none;
 }
 .owl-carousel{
     padding: 0px 15px;
@@ -179,7 +180,6 @@ a.tienlen{
     position: relative;
     float: left;
     width: 100%;
-    display: none;
 }
 .friend-invite .change{
     position: absolute;

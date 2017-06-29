@@ -27,7 +27,7 @@ var SinglePage = (function () {
                         rewindNav: false,
                         margin: 10,
                     });
-                    $('.friend-invite').show();
+                    $('.list-friend-wrapper').show();
                 }
             });
         });
