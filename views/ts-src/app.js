@@ -30,11 +30,6 @@ var SinglePage = (function () {
                         e.find('.btnInvite').attr('friendId', friend.id);
                         eOwlCarouselFriends.append(e);
                     });
-                    eOwlCarouselFriends.owlCarousel({
-                        items: 7,
-                        rewindNav: false,
-                        margin: 10,
-                    });
                 }
             });
         });
