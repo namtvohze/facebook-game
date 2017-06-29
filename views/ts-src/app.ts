@@ -25,7 +25,7 @@ export class SinglePage {
                         var e = eSampleFriend.clone().removeClass('sample');
                         e.find('.avatar').attr('src', friend.picture.data.url);
                         e.find('.name').text(friend.name).attr('title',friend.name);
-                        e.find('.btnInvite').attr('friend-id', friend.id);
+                        e.find('.btnInvite').attr('friendId', friend.id);
                         eOwlCarouselFriends.append(e);
                     });
                     $('.list-friend-wrapper .owl-carousel').owlCarousel({
@@ -41,8 +41,8 @@ export class SinglePage {
             $('.facebook-invite .btnInvite').click(() => {
                 facebookAPI.appRequests();
             });
-            $('.list-friend-wrapper').on('click','.item.friend .btnInvite',() => {
-                facebookAPI.appRequestToUser($(this).attr('friend-id'));
+            $('.list-friend-wrapper').on('click','.item.friend .btnInvite',function(){
+                facebookAPI.appRequestToUser($(this).attr('friendId'));
             });
         });
     }

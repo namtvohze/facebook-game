@@ -22,7 +22,7 @@ var SinglePage = (function () {
                         var e = eSampleFriend.clone().removeClass('sample');
                         e.find('.avatar').attr('src', friend.picture.data.url);
                         e.find('.name').text(friend.name).attr('title', friend.name);
-                        e.find('.btnInvite').attr('friend-id', friend.id);
+                        e.find('.btnInvite').attr('friendId', friend.id);
                         eOwlCarouselFriends.append(e);
                     });
                     $('.list-friend-wrapper .owl-carousel').owlCarousel({
@@ -35,12 +35,11 @@ var SinglePage = (function () {
         });
         this.facebookAPI.init();
         $(document).ready(function () {
-            var _this = this;
             $('.facebook-invite .btnInvite').click(function () {
                 facebookAPI.appRequests();
             });
             $('.list-friend-wrapper').on('click', '.item.friend .btnInvite', function () {
-                facebookAPI.appRequestToUser($(_this).attr('friend-id'));
+                facebookAPI.appRequestToUser($(this).attr('friendId'));
             });
         });
     };
