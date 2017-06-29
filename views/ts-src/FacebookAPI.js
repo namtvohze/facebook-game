@@ -34,11 +34,12 @@ var FacebookAPI = (function (_super) {
     FacebookAPI.prototype.getLoginStatus = function () {
         var _this = this;
         FB.getLoginStatus(function (response) {
-            console.log(response);
-            _this.fbPermission();
-            _this.fbListFriends();
-            // this.fbFeed();
-            _this.fbInvite();
+            // console.log(response);
+            // this.fbPermission();
+            // this.fbListFriends();
+            // // this.fbFeed();
+            // this.fbInvite();
+            _this.emit('readyShowFriend');
         });
     };
     FacebookAPI.prototype.fbLogin = function () {

@@ -12,6 +12,8 @@ export class SinglePage extends Event {
         var facebookAPI;
         this.facebookAPI.on('readyFacebook', () => {
             facebookAPI = this.facebookAPI;
+        });
+        this.facebookAPI.on('readyShowFriend',()=>{
             facebookAPI.fbInvite(function (response) {
                 console.log('----------------------------',response);
                 if (response.data) {
@@ -31,10 +33,7 @@ export class SinglePage extends Event {
                     });
                 }
             });
-            setInterval(() => {
-                facebookAPI.fbInvite();
-            }, 5000);
-        });
+        })
         this.facebookAPI.init();
         $(document).ready(function () {
             $('.facebook-invite .btnInvite').click(() => {

@@ -20,7 +20,6 @@ export class FacebookAPI extends Event {
         this.emit('readyFacebook');
         this.getLoginStatus();
         this.fbLogin();
-
     }
 
     init() {
@@ -29,11 +28,12 @@ export class FacebookAPI extends Event {
 
     public getLoginStatus() {
         FB.getLoginStatus((response) => {
-            console.log(response);
-            this.fbPermission();
-            this.fbListFriends();
-            // this.fbFeed();
-            this.fbInvite();
+            // console.log(response);
+            // this.fbPermission();
+            // this.fbListFriends();
+            // // this.fbFeed();
+            // this.fbInvite();
+            this.emit('readyShowFriend');
         });
     }
 
