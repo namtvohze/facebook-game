@@ -37,6 +37,7 @@ var SinglePage = (function () {
         $(document).ready(function () {
             var _this = this;
             $('.facebook-invite .btnInvite').click(function () {
+                alert('123');
                 facebookAPI.appRequests();
             });
             $('.item.friend .btnInvite').click(function () {
