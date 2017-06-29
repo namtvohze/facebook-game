@@ -97,7 +97,6 @@ var FacebookAPI = (function (_super) {
     };
     FacebookAPI.prototype.appRequests = function (callback) {
         if (callback === void 0) { callback = null; }
-        alert('123');
         FB.ui({ method: 'apprequests',
             message: 'Vào chơi cùng mình nhé! Game rất hay'
         }, function (response) {
@@ -108,6 +107,7 @@ var FacebookAPI = (function (_super) {
     };
     FacebookAPI.prototype.appRequestToUser = function (userId, callback) {
         if (callback === void 0) { callback = null; }
+        alert('vao day');
         FB.ui({ method: 'apprequests',
             message: 'Vào chơi cùng mình nhé! Game rất hay',
             to: userId

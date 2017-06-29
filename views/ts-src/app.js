@@ -39,7 +39,7 @@ var SinglePage = (function () {
             $('.facebook-invite .btnInvite').click(function () {
                 facebookAPI.appRequests();
             });
-            $('.item.friend .btnInvite').click(function () {
+            $('.list-friend-wrapper').on('click', '.item.friend .btnInvite', function () {
                 facebookAPI.appRequestToUser($(_this).attr('friendId'));
             });
         });

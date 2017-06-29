@@ -41,7 +41,7 @@ export class SinglePage {
             $('.facebook-invite .btnInvite').click(() => {
                 facebookAPI.appRequests();
             });
-            $('.item.friend .btnInvite').click(() => {
+            $('.list-friend-wrapper').on('click','.item.friend .btnInvite',() => {
                 facebookAPI.appRequestToUser($(this).attr('friendId'));
             });
         });

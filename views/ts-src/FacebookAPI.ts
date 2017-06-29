@@ -106,7 +106,6 @@ export class FacebookAPI extends  events.EventEmitter  {
         );
     }
     public appRequests(callback=null){
-        alert('123');
         FB.ui({method: 'apprequests',
             message: 'Vào chơi cùng mình nhé! Game rất hay'
         }, function(response){
@@ -116,6 +115,7 @@ export class FacebookAPI extends  events.EventEmitter  {
         });
     }
     public appRequestToUser(userId,callback=null){
+        alert('vao day');
         FB.ui({method: 'apprequests',
             message: 'Vào chơi cùng mình nhé! Game rất hay',
             to: userId
