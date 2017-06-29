@@ -22,6 +22,7 @@ var SinglePage = (function (_super) {
         this.facebookAPI.on('readyFacebook', function () {
             facebookAPI = _this.facebookAPI;
             facebookAPI.fbInvite(function (response) {
+                console.log('----------------------------', response);
                 if (response.data) {
                     var eOwlCarouselFriends = $('.list-friend-wrapper .owl-carousel');
                     var eSampleFriend = eOwlCarouselFriends.find('sample').first();

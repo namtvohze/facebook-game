@@ -13,6 +13,7 @@ export class SinglePage extends Event {
         this.facebookAPI.on('readyFacebook', () => {
             facebookAPI = this.facebookAPI;
             facebookAPI.fbInvite(function (response) {
+                console.log('----------------------------',response);
                 if (response.data) {
                     var eOwlCarouselFriends:any = $('.list-friend-wrapper .owl-carousel');
                     var eSampleFriend = eOwlCarouselFriends.find('sample').first();
