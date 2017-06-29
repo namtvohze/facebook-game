@@ -30,6 +30,7 @@ var SinglePage = (function () {
                         rewindNav: false,
                         margin: 10,
                     });
+                    $('.friend-invite').show();
                 }
             });
         });
@@ -39,7 +40,8 @@ var SinglePage = (function () {
                 facebookAPI.appRequests();
             });
             $('.list-friend-wrapper').on('click', '.item.friend .btnInvite', function () {
-                facebookAPI.appRequestToUser($(this).attr('friendId'));
+                facebookAPI.appRequestToUser($(this).attr('friendId'), function (response) {
+                });
             });
         });
     };

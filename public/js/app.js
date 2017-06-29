@@ -104,6 +104,7 @@ var SinglePage = (function () {
                         rewindNav: false,
                         margin: 10,
                     });
+                    $('.friend-invite').show();
                 }
             });
         });
@@ -113,7 +114,8 @@ var SinglePage = (function () {
                 facebookAPI.appRequests();
             });
             $('.list-friend-wrapper').on('click', '.item.friend .btnInvite', function () {
-                facebookAPI.appRequestToUser($(this).attr('friendId'));
+                facebookAPI.appRequestToUser($(this).attr('friendId'), function (response) {
+                });
             });
         });
     };
@@ -551,7 +553,6 @@ var FacebookAPI = (function (_super) {
     };
     FacebookAPI.prototype.appRequestToUser = function (userId, callback) {
         if (callback === void 0) { callback = null; }
-        alert(userId);
         FB.ui({ method: 'apprequests',
             message: 'Vào chơi cùng mình nhé! Game rất hay',
             to: userId
