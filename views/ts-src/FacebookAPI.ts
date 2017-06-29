@@ -89,11 +89,14 @@ export class FacebookAPI extends Event {
             console.log(response);
         });
     }
-    public fbInvite(){
+    public fbInvite(callback=null){
         FB.api(
             "/me/invitable_friends",
             function (response) {
                 console.log(response);
+                if(callback){
+                    callback(response);
+                }
             }
         );
     }

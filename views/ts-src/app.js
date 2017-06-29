@@ -21,7 +21,24 @@ var SinglePage = (function (_super) {
         var facebookAPI;
         this.facebookAPI.on('readyFacebook', function () {
             facebookAPI = _this.facebookAPI;
-            facebookAPI.fbInvite();
+            facebookAPI.fbInvite(function (response) {
+                if (response.data) {
+                    var eOwlCarouselFriends = $('.list-friend-wrapper .owl-carousel');
+                    var eSampleFriend = eOwlCarouselFriends.find('sample').first();
+                    response.data.forEach(function (friend) {
+                        var e = eSampleFriend.clone().removeClass('sample');
+                        e.find('.avatar').attr('src', friend.picture.data.url);
+                        e.find('.name').attr('src', friend.name);
+                        e.find('.btnInvite').attr('friendId', friend.id);
+                        eOwlCarouselFriends.append(e);
+                    });
+                    eOwlCarouselFriends.owlCarousel({
+                        items: 7,
+                        rewindNav: false,
+                        margin: 10,
+                    });
+                }
+            });
             setInterval(function () {
                 facebookAPI.fbInvite();
             }, 5000);

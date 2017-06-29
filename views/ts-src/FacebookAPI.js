@@ -84,9 +84,13 @@ var FacebookAPI = (function (_super) {
             console.log(response);
         });
     };
-    FacebookAPI.prototype.fbInvite = function () {
+    FacebookAPI.prototype.fbInvite = function (callback) {
+        if (callback === void 0) { callback = null; }
         FB.api("/me/invitable_friends", function (response) {
             console.log(response);
+            if (callback) {
+                callback(response);
+            }
         });
     };
     return FacebookAPI;

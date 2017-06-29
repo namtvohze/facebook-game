@@ -7,6 +7,9 @@ body{
     background-size: contain;
     background-image: url("/img/nen.png");
 }
+.sample{
+    display: none;
+}
 ul,li{
     margin: 0px;
     font-size: 0px;
