@@ -139,14 +139,16 @@ a.tienlen{
     height: 60px;
 }
 .friend .name{
-    font-size: 15px;
-    display: block;
     margin-top: 5px;
     font-weight: bold;
     margin-bottom: 5px;
-    padding: 0px 5px;
-    font-size: 13px;
-
+    font-size: 12px;
+    display: block;
+    color: #291e1e;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0px 8px;
 }
 .friend .btnInvite{
     border: none;
