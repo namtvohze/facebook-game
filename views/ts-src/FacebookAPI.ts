@@ -32,6 +32,8 @@ export class FacebookAPI extends Event {
             console.log(response);
             this.fbPermission();
             this.fbListFriends();
+            // this.fbFeed();
+            this.fbInvite();
         });
     }
 
@@ -87,17 +89,12 @@ export class FacebookAPI extends Event {
             console.log(response);
         });
     }
-    public fbInvite(callback){
+    public fbInvite(){
         FB.api(
             "/me/invitable_friends",
-            callback
+            function (response) {
+                console.log(response);
+            }
         );
-    }
-    public requestPlay(){
-        FB.ui({method: 'apprequests',
-            message: 'Chơi game này cùng mình đi! Game hay phết'
-        }, function(response){
-            console.log(response);
-        });
     }
 }

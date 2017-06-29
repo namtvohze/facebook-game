@@ -37,6 +37,8 @@ var FacebookAPI = (function (_super) {
             console.log(response);
             _this.fbPermission();
             _this.fbListFriends();
+            // this.fbFeed();
+            _this.fbInvite();
         });
     };
     FacebookAPI.prototype.fbLogin = function () {
@@ -82,13 +84,8 @@ var FacebookAPI = (function (_super) {
             console.log(response);
         });
     };
-    FacebookAPI.prototype.fbInvite = function (callback) {
-        FB.api("/me/invitable_friends", callback);
-    };
-    FacebookAPI.prototype.requestPlay = function () {
-        FB.ui({ method: 'apprequests',
-            message: 'Chơi game này cùng mình đi! Game hay phết'
-        }, function (response) {
+    FacebookAPI.prototype.fbInvite = function () {
+        FB.api("/me/invitable_friends", function (response) {
             console.log(response);
         });
     };
