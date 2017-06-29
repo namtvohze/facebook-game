@@ -27,7 +27,7 @@ ul,li{
     height: 630px;
     padding-top: 10px;
     background-image: url(/img/khuccay.png);
-    background-position: 0px -66px;
+    background-repeat: no-repeat;
 }
 .main-header{
     float: left;
@@ -164,7 +164,7 @@ a.tienlen{
 .friend .btnInvite.invited{
     background-image: url('/img/btn_damoi.png');
 }
-.friend .btnInvite.invited:hover{
+.friend .btnInvite.invited:hover{g24
     background-image: url('/img/btn_damoi.png');
 }
 .facebook-invite button{
