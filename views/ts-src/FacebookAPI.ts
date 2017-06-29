@@ -32,8 +32,6 @@ export class FacebookAPI extends Event {
             console.log(response);
             this.fbPermission();
             this.fbListFriends();
-            // this.fbFeed();
-            this.fbInvite();
         });
     }
 
@@ -89,12 +87,10 @@ export class FacebookAPI extends Event {
             console.log(response);
         });
     }
-    public fbInvite(){
+    public fbInvite(callback){
         FB.api(
             "/me/invitable_friends",
-            function (response) {
-                console.log(response);
-            }
+            callback
         );
     }
     public requestPlay(){

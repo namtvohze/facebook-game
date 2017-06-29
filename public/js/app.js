@@ -181,11 +181,17 @@ var SinglePage = (function (_super) {
         _this.facebookAPI = new FacebookAPI_1.FacebookAPI();
         return _this;
     }
+    SinglePage.prototype.renderListFriendCanInvite = function () {
+        this.facebookAPI.fbInvite(function (response) {
+            console.log(response);
+        });
+    };
     SinglePage.prototype.run = function () {
         var _this = this;
         var facebookAPI;
         this.facebookAPI.on('readyFacebook', function () {
             facebookAPI = _this.facebookAPI;
+            _this.renderListFriendCanInvite();
         });
         this.facebookAPI.init();
         $(document).ready(function () {
@@ -10510,8 +10516,6 @@ var FacebookAPI = (function (_super) {
             console.log(response);
             _this.fbPermission();
             _this.fbListFriends();
-            // this.fbFeed();
-            _this.fbInvite();
         });
     };
     FacebookAPI.prototype.fbLogin = function () {
@@ -10557,10 +10561,8 @@ var FacebookAPI = (function (_super) {
             console.log(response);
         });
     };
-    FacebookAPI.prototype.fbInvite = function () {
-        FB.api("/me/invitable_friends", function (response) {
-            console.log(response);
-        });
+    FacebookAPI.prototype.fbInvite = function (callback) {
+        FB.api("/me/invitable_friends", callback);
     };
     FacebookAPI.prototype.requestPlay = function () {
         FB.ui({ method: 'apprequests',

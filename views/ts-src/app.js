@@ -16,11 +16,17 @@ var SinglePage = (function (_super) {
         _super.apply(this, arguments);
         this.facebookAPI = new FacebookAPI_1.FacebookAPI();
     }
+    SinglePage.prototype.renderListFriendCanInvite = function () {
+        this.facebookAPI.fbInvite(function (response) {
+            console.log(response);
+        });
+    };
     SinglePage.prototype.run = function () {
         var _this = this;
         var facebookAPI;
         this.facebookAPI.on('readyFacebook', function () {
             facebookAPI = _this.facebookAPI;
+            _this.renderListFriendCanInvite();
         });
         this.facebookAPI.init();
         $(document).ready(function () {
