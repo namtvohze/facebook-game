@@ -1,8 +1,4 @@
 "use strict";
-/**
- * Created by NamTV on 6/6/2017.
- */
-var $ = require('jquery');
 var FacebookAPI_1 = require("./FacebookAPI");
 var SinglePage = (function () {
     function SinglePage() {
@@ -26,9 +22,14 @@ var SinglePage = (function () {
                         console.log(friend);
                         var e = eSampleFriend.clone().removeClass('sample');
                         e.find('.avatar').attr('src', friend.picture.data.url);
-                        e.find('.name').attr('src', friend.name);
+                        e.find('.name').text(friend.name);
                         e.find('.btnInvite').attr('friendId', friend.id);
                         eOwlCarouselFriends.append(e);
+                    });
+                    $('.list-friend-wrapper .owl-carousel').owlCarousel({
+                        items: 7,
+                        rewindNav: false,
+                        margin: 10,
                     });
                 }
             });
