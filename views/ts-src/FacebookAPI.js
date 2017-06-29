@@ -14,7 +14,6 @@ var FacebookAPI = (function (_super) {
         _super.apply(this, arguments);
     }
     FacebookAPI.prototype.loadFacebookSDK = function () {
-        console.log('333333333333333333333');
         FB.init({
             // appId: '304062223380557',
             appId: '1081935061865457',
@@ -39,7 +38,6 @@ var FacebookAPI = (function (_super) {
             // this.fbListFriends();
             // // this.fbFeed();
             // this.fbInvite();
-            console.log('--------------------------------', response);
             _this.emit('readyShowFriend');
         });
     };

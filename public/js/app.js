@@ -82,13 +82,10 @@ var SinglePage = (function () {
         var _this = this;
         var facebookAPI;
         this.facebookAPI.on('readyFacebook', function () {
-            console.log('22222222222222222222222222222-123');
             facebookAPI = _this.facebookAPI;
         });
         this.facebookAPI.on('readyShowFriend', function () {
-            console.log('111111111111111111111111111111');
             facebookAPI.fbInvite(function (response) {
-                console.log('----------------------------', response);
                 if (response.data) {
                     var eOwlCarouselFriends = $('.list-friend-wrapper .owl-carousel');
                     var eSampleFriend = $('.list-friend-wrapper .sample').first();
@@ -115,6 +112,7 @@ var SinglePage = (function () {
             });
             $('.list-friend-wrapper').on('click', '.item.friend .btnInvite', function () {
                 facebookAPI.appRequestToUser($(this).attr('friendId'), function (response) {
+                    console.log(response);
                 });
             });
         });
@@ -460,7 +458,6 @@ var FacebookAPI = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     FacebookAPI.prototype.loadFacebookSDK = function () {
-        console.log('333333333333333333333');
         FB.init({
             // appId: '304062223380557',
             appId: '1081935061865457',
@@ -485,7 +482,6 @@ var FacebookAPI = (function (_super) {
             // this.fbListFriends();
             // // this.fbFeed();
             // this.fbInvite();
-            console.log('--------------------------------', response);
             _this.emit('readyShowFriend');
         });
     };

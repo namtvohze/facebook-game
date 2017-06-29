@@ -10,14 +10,11 @@ export class SinglePage {
     public run() {
         var facebookAPI:FacebookAPI;
         this.facebookAPI.on('readyFacebook', () => {
-            console.log('22222222222222222222222222222-123');
             facebookAPI = this.facebookAPI;
         });
 
         this.facebookAPI.on('readyShowFriend', () => {
-            console.log('111111111111111111111111111111');
             facebookAPI.fbInvite(function (response) {
-                console.log('----------------------------', response);
                 if (response.data) {
                     var eOwlCarouselFriends: any = $('.list-friend-wrapper .owl-carousel');
                     var eSampleFriend = $('.list-friend-wrapper .sample').first();
@@ -44,7 +41,7 @@ export class SinglePage {
             });
             $('.list-friend-wrapper').on('click','.item.friend .btnInvite',function(){
                 facebookAPI.appRequestToUser($(this).attr('friendId'),function (response) {
-
+                    console.log(response);
                 });
             });
         });

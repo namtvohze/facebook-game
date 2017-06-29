@@ -6,7 +6,6 @@ declare var FB: any;
 export class FacebookAPI extends  events.EventEmitter  {
     isReady;
     private loadFacebookSDK() {
-        console.log('333333333333333333333');
         FB.init({
             // appId: '304062223380557',
             appId: '1081935061865457',
@@ -33,7 +32,6 @@ export class FacebookAPI extends  events.EventEmitter  {
             // this.fbListFriends();
             // // this.fbFeed();
             // this.fbInvite();
-            console.log('--------------------------------', response);
             this.emit('readyShowFriend');
         });
     }
