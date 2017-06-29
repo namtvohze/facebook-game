@@ -185,6 +185,7 @@ var SinglePage = (function (_super) {
         var _this = this;
         var facebookAPI;
         this.facebookAPI.on('readyFacebook', function () {
+            console.log('22222222222222222222222222222');
             facebookAPI = _this.facebookAPI;
         });
         this.facebookAPI.on('readyShowFriend', function () {

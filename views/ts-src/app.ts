@@ -11,6 +11,7 @@ export class SinglePage extends Event {
     public run() {
         var facebookAPI;
         this.facebookAPI.on('readyFacebook', () => {
+            console.log('22222222222222222222222222222');
             facebookAPI = this.facebookAPI;
         });
         this.facebookAPI.on('readyShowFriend',()=>{
