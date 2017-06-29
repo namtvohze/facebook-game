@@ -20,10 +20,6 @@
         <div class="header-left">
             <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"
                  data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
-            <!-- Đặt thẻ này vào nơi bạn muốn Nút +1 kết xuất. -->
-            <div class="g-share">
-                <div class="g-plusone"></div>
-            </div>
         </div>
         <div class="header-right">
             <ul>
@@ -31,6 +27,8 @@
                 <li><a href="https://apps.facebook.com/chanphom/?fb_source=search&ref=br_rs" class="fanpage"  target="_blank"></a></li>
                 <li><a href="https://chanphom.com" class="support"  target="_blank"></a></li>
                 <li><a href="/" class="reload"></a></li>
+                <li><a href="/" class="phom"></a></li>
+                <li><a href="/" class="tienlen"></a></li>
             </ul>
         </div>
     </div>
@@ -89,12 +87,6 @@
         js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9&appId=1615151565418065";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-<!-- Đặt thẻ này vào phần đầu hoặc ngay trước thẻ đóng phần nội dung của bạn. -->
-<script src="https://apis.google.com/js/platform.js" async defer>
-    {
-        lang: 'vi'
-    }
-</script>
 <script>
     $(document).ready(function () {
         var owl = $('.owl-carousel').owlCarousel({

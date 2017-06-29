@@ -34,6 +34,7 @@ ul,li{
 .header-left{
     display: inline-block;
     float: left;
+    margin-top: 15px;
 }
 .header-right{
     float: right;
@@ -75,6 +76,23 @@ ul,li{
 }
 .reload:hover{
     background-image: url("/img/tailai2.png");
+}
+a.phom{
+    background-image: url("/img/phom_bt.png");
+    width: 134px;
+    height: 44px;
+}
+.phom:hover{
+    background-image: url("/img/phom_click.png");
+}
+a.tienlen{
+    background-image: url("/img/tienlen_bt.png");
+    width: 162px;
+    height: 44px;
+}
+.tienlen:hover{
+    background-image: url("/img/tienlen_click.png");
+
 }
 .fb-comments{
     background: white;
