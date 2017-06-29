@@ -18,15 +18,13 @@ export class SinglePage{
                 console.log('----------------------------',response);
                 if (response.data) {
                     var eOwlCarouselFriends:any = $('.list-friend-wrapper .owl-carousel');
-                    var eSampleFriend = eOwlCarouselFriends.find('sample').first();
-                    console.log(eSampleFriend);
+                    var eSampleFriend = eOwlCarouselFriends.find('.sample').first();
                     response.data.forEach((friend) => {
                         console.log(friend);
                         var e = eSampleFriend.clone().removeClass('sample');
                         e.find('.avatar').attr('src',friend.picture.data.url);
                         e.find('.name').attr('src',friend.name);
                         e.find('.btnInvite').attr('friendId',friend.id);
-                        eOwlCarouselFriends.append(e);
                     });
                     // eOwlCarouselFriends.owlCarousel({
                     //     items: 7,
