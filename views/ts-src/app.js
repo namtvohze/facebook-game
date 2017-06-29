@@ -4,6 +4,10 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
+/**
+ * Created by NamTV on 6/6/2017.
+ */
+var $ = require('jquery');
 var typescript_events_1 = require("typescript.events");
 var FacebookAPI_1 = require("./FacebookAPI");
 var SinglePage = (function (_super) {
@@ -14,10 +18,16 @@ var SinglePage = (function (_super) {
     }
     SinglePage.prototype.run = function () {
         var _this = this;
+        var facebookAPI;
         this.facebookAPI.on('readyFacebook', function () {
-            _this.facebookAPI.fbInvite();
+            facebookAPI = _this.facebookAPI;
         });
         this.facebookAPI.init();
+        $(document).ready(function () {
+            $('.facebook-invite .btnInvite').click(function () {
+                facebookAPI.fbInvite();
+            });
+        });
     };
     return SinglePage;
 }(typescript_events_1.Event));

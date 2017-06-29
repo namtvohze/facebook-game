@@ -5,13 +5,19 @@ import * as $ from 'jquery';
 import {Event} from "typescript.events"
 import {FacebookAPI} from "./FacebookAPI";
 declare var parser: any;
-export class SinglePage extends Event{
+export class SinglePage extends Event {
     facebookAPI = new FacebookAPI();
     public run() {
-        this.facebookAPI.on('readyFacebook',()=>{
-            this.facebookAPI.fbInvite();
+        var facebookAPI;
+        this.facebookAPI.on('readyFacebook', () => {
+            facebookAPI = this.facebookAPI;
         });
         this.facebookAPI.init();
+        $(document).ready(function () {
+            $('.facebook-invite .btnInvite').click(() => {
+                facebookAPI.fbInvite();
+            });
+        });
     }
 
 }
