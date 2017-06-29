@@ -164,7 +164,7 @@ a.tienlen{
 .friend .btnInvite.invited{
     background-image: url('/img/btn_damoi.png');
 }
-.friend .btnInvite.invited:hover{g24
+.friend .btnInvite.invited:hover{
     background-image: url('/img/btn_damoi.png');
 }
 .facebook-invite button{

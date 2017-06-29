@@ -37,7 +37,7 @@ var SinglePage = (function () {
                 facebookAPI.appRequests();
             });
             $('.list-friend-wrapper').on('click', '.item.friend .btnInvite', function () {
-                var eSelft = this;
+                var eSelft = $(this);
                 facebookAPI.appRequestToUser($(this).attr('friendId'), function (response) {
                     if (response && response.error_message) {
                     }
