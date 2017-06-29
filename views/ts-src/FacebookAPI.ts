@@ -115,7 +115,7 @@ export class FacebookAPI extends  events.EventEmitter  {
         });
     }
     public appRequestToUser(userId,callback=null){
-        alert('vao day');
+        alert(userId);
         FB.ui({method: 'apprequests',
             message: 'Vào chơi cùng mình nhé! Game rất hay',
             to: userId

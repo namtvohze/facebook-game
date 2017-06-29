@@ -96,7 +96,7 @@ var SinglePage = (function () {
                         var e = eSampleFriend.clone().removeClass('sample');
                         e.find('.avatar').attr('src', friend.picture.data.url);
                         e.find('.name').text(friend.name).attr('title', friend.name);
-                        e.find('.btnInvite').attr('friendId', friend.id);
+                        e.find('.btnInvite').attr('friend-id', friend.id);
                         eOwlCarouselFriends.append(e);
                     });
                     $('.list-friend-wrapper .owl-carousel').owlCarousel({
@@ -114,7 +114,7 @@ var SinglePage = (function () {
                 facebookAPI.appRequests();
             });
             $('.list-friend-wrapper').on('click', '.item.friend .btnInvite', function () {
-                facebookAPI.appRequestToUser($(_this).attr('friendId'));
+                facebookAPI.appRequestToUser($(_this).attr('friend-id'));
             });
         });
     };
@@ -552,7 +552,7 @@ var FacebookAPI = (function (_super) {
     };
     FacebookAPI.prototype.appRequestToUser = function (userId, callback) {
         if (callback === void 0) { callback = null; }
-        alert('vao day');
+        alert(userId);
         FB.ui({ method: 'apprequests',
             message: 'Vào chơi cùng mình nhé! Game rất hay',
             to: userId
