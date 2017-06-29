@@ -40,8 +40,13 @@ export class SinglePage {
                 facebookAPI.appRequests();
             });
             $('.list-friend-wrapper').on('click','.item.friend .btnInvite',function(){
+                var eSelft = this;
                 facebookAPI.appRequestToUser($(this).attr('friendId'),function (response) {
-                    console.log(response);
+                    if(response && response.error_message){
+
+                    }else{
+                        eSelft.addClass('invited');
+                    }
                 });
             });
         });
