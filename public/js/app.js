@@ -10533,6 +10533,7 @@ var FacebookAPI = (function (_super) {
             // this.fbListFriends();
             // // this.fbFeed();
             // this.fbInvite();
+            console.log('--------------------------------', response);
             _this.emit('readyShowFriend');
         });
     };

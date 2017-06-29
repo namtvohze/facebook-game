@@ -33,6 +33,7 @@ export class FacebookAPI extends Event {
             // this.fbListFriends();
             // // this.fbFeed();
             // this.fbInvite();
+            console.log('--------------------------------',response);
             this.emit('readyShowFriend');
         });
     }
