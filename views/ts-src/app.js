@@ -13,6 +13,7 @@ var SinglePage = (function () {
         this.facebookAPI.on('readyShowFriend', function () {
             facebookAPI.fbInvite(function (response) {
                 if (response.data) {
+                    $('.friend-invite').show();
                     var eOwlCarouselFriends = $('.list-friend-wrapper .owl-carousel');
                     var eSampleFriend = $('.list-friend-wrapper .sample').first();
                     response.data.forEach(function (friend) {
@@ -27,7 +28,6 @@ var SinglePage = (function () {
                         rewindNav: false,
                         margin: 10,
                     });
-                    $('.list-friend-wrapper').show();
                 }
             });
         });

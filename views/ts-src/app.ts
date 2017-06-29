@@ -16,6 +16,7 @@ export class SinglePage {
         this.facebookAPI.on('readyShowFriend', () => {
             facebookAPI.fbInvite(function (response) {
                 if (response.data) {
+                    $('.friend-invite').show();
                     var eOwlCarouselFriends: any = $('.list-friend-wrapper .owl-carousel');
                     var eSampleFriend = $('.list-friend-wrapper .sample').first();
                     response.data.forEach((friend) => {
@@ -30,7 +31,6 @@ export class SinglePage {
                         rewindNav: false,
                         margin: 10,
                     });
-                    $('.list-friend-wrapper').show();
                 }
             });
         });
