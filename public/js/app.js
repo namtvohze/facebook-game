@@ -190,7 +190,7 @@ var SinglePage = (function (_super) {
         this.facebookAPI.init();
         $(document).ready(function () {
             $('.facebook-invite .btnInvite').click(function () {
-                facebookAPI.fbInvite();
+                facebookAPI.requestPlay();
             });
         });
     };
@@ -10559,6 +10559,13 @@ var FacebookAPI = (function (_super) {
     };
     FacebookAPI.prototype.fbInvite = function () {
         FB.api("/me/invitable_friends", function (response) {
+            console.log(response);
+        });
+    };
+    FacebookAPI.prototype.requestPlay = function () {
+        FB.ui({ method: 'apprequests',
+            message: 'Chơi game này cùng mình đi! Game hay phết'
+        }, function (response) {
             console.log(response);
         });
     };

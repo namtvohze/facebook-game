@@ -25,7 +25,7 @@ var SinglePage = (function (_super) {
         this.facebookAPI.init();
         $(document).ready(function () {
             $('.facebook-invite .btnInvite').click(function () {
-                facebookAPI.fbInvite();
+                facebookAPI.requestPlay();
             });
         });
     };

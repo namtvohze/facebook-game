@@ -97,4 +97,11 @@ export class FacebookAPI extends Event {
             }
         );
     }
+    public requestPlay(){
+        FB.ui({method: 'apprequests',
+            message: 'Chơi game này cùng mình đi! Game hay phết'
+        }, function(response){
+            console.log(response);
+        });
+    }
 }

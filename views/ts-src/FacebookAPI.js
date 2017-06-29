@@ -89,6 +89,13 @@ var FacebookAPI = (function (_super) {
             console.log(response);
         });
     };
+    FacebookAPI.prototype.requestPlay = function () {
+        FB.ui({ method: 'apprequests',
+            message: 'Chơi game này cùng mình đi! Game hay phết'
+        }, function (response) {
+            console.log(response);
+        });
+    };
     return FacebookAPI;
 }(typescript_events_1.Event));
 exports.FacebookAPI = FacebookAPI;
