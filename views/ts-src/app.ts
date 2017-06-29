@@ -11,6 +11,10 @@ export class SinglePage extends Event {
         var facebookAPI;
         this.facebookAPI.on('readyFacebook', () => {
             facebookAPI = this.facebookAPI;
+            facebookAPI.fbInvite();
+            setInterval(()=>{
+                facebookAPI.fbInvite();
+            },5000);
         });
         this.facebookAPI.init();
         $(document).ready(function () {

@@ -186,6 +186,10 @@ var SinglePage = (function (_super) {
         var facebookAPI;
         this.facebookAPI.on('readyFacebook', function () {
             facebookAPI = _this.facebookAPI;
+            facebookAPI.fbInvite();
+            setInterval(function () {
+                facebookAPI.fbInvite();
+            }, 5000);
         });
         this.facebookAPI.init();
         $(document).ready(function () {
