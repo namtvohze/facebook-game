@@ -28,6 +28,7 @@ var SinglePage = (function () {
                         e.find('.avatar').attr('src', friend.picture.data.url);
                         e.find('.name').attr('src', friend.name);
                         e.find('.btnInvite').attr('friendId', friend.id);
+                        eOwlCarouselFriends.append(e);
                     });
                 }
             });
